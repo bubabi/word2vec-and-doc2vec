@@ -25,6 +25,21 @@ y_train = []
 y_test = []
 
 
+def accuracy_plot(x, y_train, y_test):
+
+    # Plot the data
+    plt.plot(x, y_train, label='train accuracy')
+    plt.plot(x, y_test, label='test accuracy')
+
+    # Add a legend
+    plt.legend()
+    plt.title("vector_size & accuracy")
+    plt.xlabel("vector_size")
+    plt.ylabel("accuracy %")
+    # Show the plot
+    plt.show()
+
+
 def preprocessing_plots(text):
     return [i for i in word_tokenize(text.lower()) if i not in stop]
 
@@ -91,22 +106,7 @@ def test(d2v_model, classifier, testing_vectors, testing_labels, vector_size):
     accuracy = accuracy_score(testing_labels, testing_predictions)
     return accuracy*100
 
-
-def accuracy_plot(x, y_train, y_test):
-
-    # Plot the data
-    plt.plot(x, y_train, label='train accuracy')
-    plt.plot(x, y_test, label='test accuracy')
-
-    # Add a legend
-    plt.legend()
-    plt.title("vector_size & accuracy")
-    plt.xlabel("vector_size")
-    plt.ylabel("accuracy %")
-    # Show the plot
-    plt.show()
-
-
+  
 read_csv()
 
 x_train = set_tag_to_plot(x_train, 'Train')
