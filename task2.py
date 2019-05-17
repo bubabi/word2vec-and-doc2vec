@@ -43,6 +43,7 @@ def accuracy_plot(x, y_train, y_test):
 def preprocessing_plots(text):
     return [i for i in word_tokenize(text.lower()) if i not in stop]
 
+  
 def read_csv():
     with open('tagged_plots_movielens.csv', 'r') as csvfile:
         next(csvfile)
